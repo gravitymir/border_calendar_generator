@@ -1,0 +1,20 @@
+{
+  "name": "server_gen_border_calendar",
+  "version": "1.0.0",
+  "description": "generator border calendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "git": "https://github.com/gravitymir/border_calendar_generator.git",
+  "author": "gravitymir",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "puppeteer": "^5.3.1",
+    "serve-favicon": "^2.5.0"
+  }
+}
