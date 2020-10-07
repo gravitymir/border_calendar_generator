@@ -25,7 +25,7 @@ module.exports = async function start_border_calendar(start_num){
     path: file_path,
     clip: { x: 0, y: 0, width: 1046, height: Number(data_block) }
   });
-  
+
   console.log(file_path)
 
   await page.goto(`http://${process.env.EXPRESS_IP}:${process.env.EXPRESS_PORT}/tt_masty?m=${m_add_num}&hide_control=1`);
@@ -39,6 +39,17 @@ module.exports = async function start_border_calendar(start_num){
 
   console.log(file_path)
   
+  await page.goto(`http://${process.env.EXPRESS_IP}:${process.env.EXPRESS_PORT}/tt_nums?m=${m_add_num}&hide_control=1`);
+  file_name = await page.$eval("#file_name", element => element.textContent);
+
+  file_path = path.join(process.env.DIR, "border_calendar_png", "number", `${file_name}.png`)
+  r = await page.screenshot({
+    path: file_path,
+    clip: { x: 0, y: 0, width: 1046, height: Number(data_block) }
+  });
+
+  console.log(file_path)
+
   await browser.close();
   m_add_num++
 };
