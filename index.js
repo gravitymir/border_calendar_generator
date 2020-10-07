@@ -6,7 +6,7 @@ process.env.EXPRESS_PORT = 8080
 require(path.join(process.env.DIR, "express"));
 const start = require(path.join(process.env.DIR, "border_calendar"));
 
-let start_num = 24;
+let start_num = 36;
 
 function st(){
     setInterval(start, 1000, start_num)
